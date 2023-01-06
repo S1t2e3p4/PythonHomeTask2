@@ -5,16 +5,8 @@
 import os
 os.system('cls')
 
-num = int(input('Введите число равное размеру списка: '))
-number = 1
-
-print('{', end=' ')
-for i in range(num):
-    if i < num-1:
-        number = round((1+1/(i+1))**(i+1), 2)
-        print(f'{i+1}: {number}, ', end=' ')
-    if i == num-1:
-        number = round((1+1/(i+1))**(i+1), 2)
-        print(f'{i+1}: {number}', '}')
+n = int(input('Введите число n: '))
+lst = [round((1+1/i)**i, 3) for i in range(1, n+1)]
+print(f'Последовательность для заданного n: {lst}\nСумма чисел полученной последовательности: {round(sum(lst), 3)}')
 
 # По биномиальной формуле <3
